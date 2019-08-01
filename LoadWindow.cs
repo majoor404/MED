@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows.Forms;
 
 namespace MED
@@ -32,6 +25,19 @@ namespace MED
                 case 'q':
                     Close();
                     break;
+            }
+        }
+
+        private void LoadWindow_Shown(object sender, System.EventArgs e)
+        {
+            DriveInfo[] ListAllDrives = DriveInfo.GetDrives();
+
+            foreach (DriveInfo Drive in ListAllDrives)
+            {
+                //Create ListViewItem, give name etc.
+                ListViewItem NewItem = new ListViewItem();
+                NewItem.Text = Drive.Name;
+                listViewDrives.Items.Add(NewItem);
             }
         }
     }
