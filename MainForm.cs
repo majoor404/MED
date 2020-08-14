@@ -31,7 +31,7 @@ namespace MED
         {
             switch (e.KeyChar)
             {
-                
+
                 case (char)27:      // esc (terug naar tekst)
                     textBoxCommando.Text = " ";
                     Tekst.Focus();
@@ -56,11 +56,6 @@ namespace MED
 
             switch (commando)
             {
-                case "l":
-                    LoadWindow lf = new LoadWindow();
-                    lf.ShowDialog();
-                    //LoadFile(commando_regel.Substring(7));
-                    break;
                 case "q":           // q is close
                     Close();
                     break;
